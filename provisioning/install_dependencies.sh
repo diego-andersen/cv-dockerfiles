@@ -49,7 +49,6 @@ readonly ubuntu_pkgs=(
     pkg-config
     qv4l2
     v4l-utils
-    v4l2ucp
     zlib1g-dev
 )
 

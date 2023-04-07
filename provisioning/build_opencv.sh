@@ -29,7 +29,7 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
-git clone --depth 1 --b $OPENCV_VERSION https://github.com/opencv/opencv.git
+git clone --depth 1 -b $OPENCV_VERSION https://github.com/opencv/opencv.git
 
 # Ignore spaces inside array values
 IFS=""
@@ -59,7 +59,7 @@ cmake_flags=(
     "-D EIGEN_INCLUDE_PATH=/usr/include/eigen3"
     "-D ENABLE_NEON=OFF"
     "-D WITH_GSTREAMER=ON"
-    "-D WITH_LIBV4L=ON"
+    "-D WITH_V4L=ON"
     "-D WITH_OPENGL=ON"
     "-D WITH_OPENCL=OFF"
     "-D WITH_IPP=OFF"
@@ -99,7 +99,7 @@ fi
 # Check for non-free modules
 if [ -v add_contrib ]
 then
-git clone --depth 1 --b ${OPENCV_VERSION} https://github.com/opencv/opencv_contrib.git
+git clone --depth 1 -b ${OPENCV_VERSION} https://github.com/opencv/opencv_contrib.git
 
 cmake_flags=(
     ${cmake_flags[@]}
